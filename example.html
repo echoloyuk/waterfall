@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Waterfall</title>
+<script type="text/javascript" src="./bin/jquery.js"></script>
+<script type="text/javascript" src="./src/js/waterfall.js"></script>
+<style type="text/css">
+.panel{width:1000px;border:1px solid red;height:500px;position:relative;}
+.item{position:absolute; width:200px; height:300px; background-color:#ccc;}
+</style>
+</head>
+
+<body>
+<div class="panel" id="panel">
+    <div class="item" style="height:100px;"></div>
+    <div class="item" style="height:120px;"></div>
+    <div class="item" style="height:310px;"></div>
+    <div class="item" style="height:110px;"></div>
+    <div class="item" style="height:145px;"></div>
+    <div class="item" style="height:127px;"></div>
+    <div class="item" style="height:321px;"></div>
+    <div class="item" style="height:124px;"></div>
+    <div class="item" style="height:30px;"></div>
+    <div class="item" style="height:90px;"></div>
+</div>
+<script type="text/javascript">
+$(function (){
+    var w = new waterfall();
+    w.$target = $('#panel');
+    w.$items = '.item';
+    w.marginLeft = 10;
+    w.marginRight = 10;
+    w.marginTop = 10;
+    w.marginBottom = 10;
+    w.init();
+    w.init();
+});
+</script>
+</body>
+</html>
