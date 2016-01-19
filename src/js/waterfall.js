@@ -100,8 +100,11 @@
     };
 
     if (typeof define === 'function'){
-        
+        define(function (require, module, exports){
+            module.exports = Waterfall;
+        });
+    } else {
+        window.waterfall = Waterfall;
     }
-    window.waterfall = Waterfall;
 
 })(window, $);
