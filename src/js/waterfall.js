@@ -100,7 +100,7 @@
     };
 
     if (typeof define === 'function'){
-        define(function (require, module, exports){
+        define(function (require, exports, module){
             module.exports = Waterfall;
         });
     } else {
