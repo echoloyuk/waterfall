@@ -1,19 +1,36 @@
-# 关于Loading
+# Waterfall
 
-使用CSS3模仿win10的loading效果，虽然还没有100%还原，但是已经基本实现效果。
+极其简单的瀑布流组件。
+![demo](./doc/demo.png)
 
-# 如何使用
+使用该组件需要注意：
+* 每一个瀑布流元素的宽度必须相同。
+* 不支持动态布局。每次元素的宽度或数量变更需要重新执行方法。
+* 瀑布流容器宽度不能改变。
 
-请使用支持CSS3的浏览器打开example.html，页面正中央会出现Loading效果。
+# 使用方法
 
-# 代码说明
+它非常简单，随时调用随时使用。
 
-您可在`/src`中查看Loading的源代码。less文件为源码，css为LESS生成的。如要修改，请自行修改less文件。
-
-在less文件中，只有最后一行是真正less实现。`.loading-panel(60px, 4px, 1.4s);`中60px为loading的边框的宽高；4px位原点半径，1.4s为单个原点旋转一周的时间。
-
-请修改后重新执行less
-
+先引入文件：
 ````
-lessc ./src/loading.less > ./src/loading.css
+<script type="text/javascript" src="./src/js/waterfall.js"></script>
 ````
+
+然后在`$(document).ready(function (){})`中使用下列示例。
+````
+var w = new waterfall(); //实例化
+w.$target = $('#panel'); //设定外围容器
+w.$items = '.item'; //设定瀑布流元素的jquery string
+w.marginLeft = 10; //间隔
+w.marginRight = 10;
+w.marginTop = 10;
+w.marginBottom = 10;
+w.init(); //计算和生成瀑布流
+````
+注意，调用init时必须保证所有的瀑布流元素的DOM已经存在并且可见。
+
+# License
+
+MIT
+
